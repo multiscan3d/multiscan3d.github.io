@@ -1,5 +1,50 @@
-<html>
-  <body>
-    <h1>MultiScan</h1>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>MultiScan</title>
+  <meta charset="utf-8">
+  <meta name="description" content="MultiScan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+  <script>
+    self.ModelViewerElement = self.ModelViewerElement || {};
+    self.ModelViewerElement.meshoptDecoderLocation = 'https://unpkg.com/meshoptimizer/meshopt_decoder.js';
+  </script>
+  <style>
+    body { text-align: center; }
+    #scan-table { width: 100%; }
+    .scan-table-cell { min-height: 256px; min-width: 256px; }
+  </style>
+</head>
+<body>
+  <h1>MultiScan dataset examples</h1>
+  <div>
+    Examples from supplement figure 11 plus additional scans visualized as in the figure, with an additional column
+    showing part articulation motion ranges as animations (last column).<br>
+    Click on any view in the first four columns to open an interactive 3D mesh viewer (left click = orbit, right click =
+    pan, mouse wheel = zoom).<br>
+    Increase zoom factor for webpage using browser controls to get larger individual interactive views, if
+    desired.<br>
+    <br><br>
+  </div>
+  <table id='scan-table'>
+    <tr>
+      <th>Textured mesh reconstruction</th>
+      <th>Semantic instances</th>
+      <th>Semantic OBBs</th>
+      <th>Part articulations</th>
+      <th>Animated articulations</th>
+    </tr>
+    <tr><th colspan='5'><hr /></th></tr>
+  </table>
+  <h1> Previous | <a href="index2.html">Next</a></h1>
+  <script type='text/javascript' src='script.js'></script>
+  <script>
+    addRow('scan-table', 'scene_00103_00');
+    addRow('scan-table', 'scene_00103_02');
+    addRow('scan-table', 'scene_00025_00');
+    addRow('scan-table', 'scene_00025_01');
+  </script>
+</body>
 </html>
